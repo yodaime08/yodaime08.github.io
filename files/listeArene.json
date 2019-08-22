@@ -1,0 +1,892 @@
+{
+  "data":[
+  {
+    "name": "Incubation Module",
+    "value": "47.2203, -1.5447"
+  },
+  {
+    "name": "Serre Tropicales",
+    "value": "47.2209, -1.5433"
+  },
+  {
+    "name": "Statue \u00C9cochard",
+    "value": "47.2197, -1.5444"
+  },
+  {
+    "name": "Grenouille Serpent",
+    "value": "47.2185, -1.5418"
+  },
+  {
+    "name": "Air De Jeux Pablo Picasso",
+    "value": "47.2146, -1.5366"
+  },
+  {
+    "name": "D6 G\u00E9ant",
+    "value": "47.2200, -1.53231"
+  },
+  {
+    "name": "Fontaine \u00C9toile",
+    "value": "47.2201, -1.5552"
+  },
+  {
+    "name": "Boshof",
+    "value": "47.2124, -1.5584"
+  },
+  {
+    "name": "Tour Dobree",
+    "value": "47.2125, -1.5670"
+  },
+  {
+    "name": "Plaque De Lattre Tassigny",
+    "value": "47.2116, -1.5592"
+  },
+  {
+    "name": "Pataugeoire",
+    "value": "47.222196, -1.581618"
+  },
+  {
+    "name": "Fontaine Du Manoir",
+    "value": "47.2227, -1.5813"
+  },
+  {
+    "name": "Manoir de proc\u00E9",
+    "value": "47.2230, -1.5810"
+  },
+  {
+    "name": "Fontaine aux 3 statues",
+    "value": "47.2241, -1.5838"
+  },
+  {
+    "name": "Coccinelle",
+    "value": "47.2237, -1.5840"
+  },
+  {
+    "name": "Gymnase du port au bl\u00E9",
+    "value": "47.1903, -1.5527"
+  },
+  {
+    "name": "Plaque Jean Moulin",
+    "value": "47.1914, -1.5481"
+  },
+  {
+    "name": "Square B\u00E9arn",
+    "value": "47.1862, -1.5585"
+  },
+  {
+    "name": "Monument baliniere",
+    "value": "47.1856, -1.5539"
+  },
+  {
+    "name": "Rez\u00E9 Ch\u00E2teau",
+    "value": "47.1827, -1.5525"
+  },
+  {
+    "name": "Fontaine parc baliniere",
+    "value": "47.1823, -1.5522"
+  },
+  {
+    "name": "A la m\u00E9moire de Daviais JB",
+    "value": "47.1895, -1.5684"
+  },
+  {
+    "name": "Rocher dimanche",
+    "value": "47.199529, -1.565999"
+  },
+  {
+    "name": "Ancienne chambre de commerce",
+    "value": "47.19985, -1.573715"
+  },
+  {
+    "name": "J.frais",
+    "value": "47.202378, -1.57209"
+  },
+  {
+    "name": "Anneaux",
+    "value": "47.204299, -1.571343"
+  },
+  {
+    "name": "Grue Titan jaune",
+    "value": "47.205099, -1.569724"
+  },
+  {
+    "name": "Chantier de l \u00EEle",
+    "value": "47.205854, -1.565828"
+  },
+  {
+    "name": "Machines de l \u00EEle",
+    "value": "47.206346, -1.564696"
+  },
+  {
+    "name": "Nantes Luigi",
+    "value": "47.204989, -1.563814"
+  },
+  {
+    "name": "Metre du g\u00E9ant",
+    "value": "47.20698, -1.562618"
+  },
+  {
+    "name": "Melting potes tag",
+    "value": "47.205039, -1.55775"
+  },
+  {
+    "name": "Nantes l absence",
+    "value": "47.207501, -1.55723"
+  },
+  {
+    "name": "Tour a glace-Maree Nantaise",
+    "value": "47.202094, -1.5542"
+  },
+  {
+    "name": "Poulpirate",
+    "value": "47.202022, -1.547288"
+  },
+  {
+    "name": "Trompe Oeil-Pharmacie",
+    "value": "47.205709, -1.548716"
+  },
+  {
+    "name": "Maison des jeux",
+    "value": "47.206263, -1.549721"
+  },
+  {
+    "name": "Bio sph\u00E8re",
+    "value": "47.206895, -1.550771"
+  },
+  {
+    "name": "Ancien four",
+    "value": "47.20585, -1.54562"
+  },
+  {
+    "name": "Complexe Mangin",
+    "value": "47.204322, -1.542885"
+  },
+  {
+    "name": "Maison des Associations",
+    "value": "47.20308376 , -1.54094905"
+  },
+  {
+    "name": "Centre commercial Beaulieu",
+    "value": "47.205719, -1.535972"
+  },
+  {
+    "name": "Rail Garden",
+    "value": "47.203233, -1.5363"
+  },
+  {
+    "name": "Mairie Annexe de l'ile de Nantes",
+    "value": "47.206133, -1.538220"
+  },
+  {
+    "name": "Conservatoire de Nantes",
+    "value": "47.207439, -1.532379"
+  },
+  {
+    "name": "Palais des sports, \u00EEle beaulieu",
+    "value": "47.209109, -1.537311"
+  },
+  {
+    "name": "The Twins",
+    "value": "47.209861, -1.53985"
+  },
+  {
+    "name": "Ecusson Graff",
+    "value": "47.20926, -1.54118"
+  },
+  {
+    "name": "Jeux place de la Guirou\u00E9",
+    "value": "47.208497, -1.527586"
+  },
+  {
+    "name": "Bassin des vulcains",
+    "value": "47.210023, -1.530379"
+  },
+  {
+    "name": "Batiment Tetris (Pixels) Nantes \u00EEle Est",
+    "value": "47.210388, -1.528028"
+  },
+  {
+    "name": "Pont Eric Tabarly",
+    "value": "47.211517, -1.528681"
+  },
+  {
+    "name": "Peace monument",
+    "value": "47.211167, -1.52365"
+  },
+  {
+    "name": "Nantes-Notre dames des Lumi\u00E8res-Loire atlantique",
+    "value": "47.210517, -1.523306"
+  },
+  {
+    "name": "Entre 2 chaises,\u00EEle Est",
+    "value": "47.213308, -1.521232"
+  },
+  {
+    "name": "Soulever un li\u00E8vre,Nantes, \u00EEle Est",
+    "value": "47.213629, -1.518128"
+  },
+  {
+    "name": "Monument Laennec",
+    "value": "47.21178769, -1.55613519"
+  },
+  {
+    "name": "Mur tomb\u00E9 du ciel",
+    "value": "47.212194, -1.553051."
+  },
+  {
+    "name": "Mode raizin just towe",
+    "value": "47.21144545, -1.5496693."
+  },
+  {
+    "name": "Aime Delrue",
+    "value": "47.20919929, -1.55015983."
+  },
+  {
+    "name": "Fox Trot",
+    "value": "47.213, -1.5501199"
+  },
+  {
+    "name": "Phare de belfort",
+    "value": "47.2111971, -1.5445131"
+  },
+  {
+    "name": "Mus\u00E9e Lu",
+    "value": "47.2146308, -1.5461651"
+  },
+  {
+    "name": "Tour Lu",
+    "value": "47.21547483, -1.54629258."
+  },
+  {
+    "name": "Tile Art",
+    "value": "47.21563855, -1.54536615."
+  },
+  {
+    "name": "Kraken Graffiti",
+    "value": "47.21599334, -1.54131095"
+  },
+  {
+    "name": "Peage Sauvage",
+    "value": "47.216344, -1.530887"
+  },
+  {
+    "name": "Aire de jeu",
+    "value": "47.216752, -1.534211"
+  },
+  {
+    "name": "Aire de jeu pablo picasso",
+    "value": "47.214954, -1.536619"
+  },
+  {
+    "name": "Hongrie Playground",
+    "value": "47.2142034, -1.532630599"
+  },
+  {
+    "name": "Ch\u00E2teau d eau de la Roche",
+    "value": "47.2169065, -1.51960111"
+  },
+  {
+    "name": "M\u00E9morial De L\u2019abolition De L\u2019esclavage",
+    "value": "47.209430, -1.565099"
+  },
+  {
+    "name": "Enseigne Luthier",
+    "value": "47.210193, -1.563873"
+  },
+  {
+    "name": "Place Eug\u00E8ne Livet",
+    "value": "47.211526, -1.567377"
+  },
+  {
+    "name": "Tour Dobree",
+    "value": "47.212563,-1.566960"
+  },
+  {
+    "name": "Statue Angelot",
+    "value": "47.213165,-1.566185"
+  },
+  {
+    "name": "Cour Administrative D\u2019appel",
+    "value": "47.214621,-1.567641"
+  },
+  {
+    "name": "Institution Fran\u00E7oise D\u2019Ambroise",
+    "value": "47.217779,-1.569370"
+  },
+  {
+    "name": "Le Radisson",
+    "value": "47.217305,-1.562997"
+  },
+  {
+    "name": "La Vierge Marie",
+    "value": "47.219014,-1.563047"
+  },
+  {
+    "name": "Nantes Les Pignes De Pin",
+    "value": "47.218807,-1.561133"
+  },
+  {
+    "name": "Nantes, immeuble rue Jean Jaur",
+    "value": "47.219444,-1.560225"
+  },
+  {
+    "name": "Tour de Bretagne",
+    "value": "47.217556,-1.558527"
+  },
+  {
+    "name": "Homme au balcon trompe l\u2019oeil",
+    "value": "47.214573,-1.563391"
+  },
+  {
+    "name": "L\u2019op\u00E9ra de Nantes Graslin",
+    "value": "47.213432,-1.562428"
+  },
+  {
+    "name": "Fontaine place Graslin",
+    "value": "47.212971,-1.562415"
+  },
+  {
+    "name": "Plaque de Lattre de Tassigny",
+    "value": "47.211646,-1.559349"
+  },
+  {
+    "name": "Boshof 1900",
+    "value": "47.212401,-1.559015"
+  },
+  {
+    "name": "Fontaine de la place Royale",
+    "value": "47.214453,-1.558552"
+  },
+  {
+    "name": "Sculpture voyage \u00E0 Nantes",
+    "value": "47.214740,-1.553091"
+  },
+  {
+    "name": "Mario Bros",
+    "value": "47.215703,-1.554439"
+  },
+  {
+    "name": "Tigre qui saute",
+    "value": "47.215311,-1.555215"
+  },
+  {
+    "name": "Nantes fontaine de l\u2019\u00E9toile",
+    "value": "47.220071,-1.555356"
+  },
+  {
+    "name": "La r\u00E9sistance \u00E0 ses morts",
+    "value": "47.220475,-1.554708"
+  },
+  {
+    "name": "Cath\u00E9drale St pierre",
+    "value": "47.218239,-1.551007"
+  },
+  {
+    "name": "Porte Saint-pierre",
+    "value": "47.218910,-1.550231"
+  },
+  {
+    "name": "Monument au mort st Andr\u00E9",
+    "value": "47.221420,-1.551329"
+  },
+  {
+    "name": "La maison caf\u00E9",
+    "value": "47.220217,-1.549587"
+  },
+  {
+    "name": "Mus\u00E9e des beaux-arts",
+    "value": "47.219320,-1.547145"
+  },
+  {
+    "name": "Poisson",
+    "value": "47.209418, -1.570695"
+  },
+  {
+    "name": "Peinture murale fausse entr\u00E9es et fen\u00EAtres",
+    "value": "47.207868, -1.571114"
+  },
+  {
+    "name": "Pic et Paroi",
+    "value": "47.209699, -1.575356"
+  },
+  {
+    "name": "Les Franciscains",
+    "value": "47.2148072, -1.5749928"
+  },
+  {
+    "name": "Nantes memorial martyrs 1793-1794",
+    "value": "47.2169248, -1.5760752"
+  },
+  {
+    "name": "Tous Mes Amis",
+    "value": "47.206701, -1.577015"
+  },
+  {
+    "name": "La Maison Dor\u00E9e",
+    "value": "47.20832, -1.580374"
+  },
+  {
+    "name": "Carte Postale Murale",
+    "value": "47.208642, -1.581713"
+  },
+  {
+    "name": "Eglise St Clair",
+    "value": "47.212612, -1.583372"
+  },
+  {
+    "name": "Facade d\u2019une ancienne discoth\u00E8que",
+    "value": "47.214243, -1.586121"
+  },
+  {
+    "name": "Salle De L'\u00E9galit\u00E9",
+    "value": "47.209937, -1.588815"
+  },
+  {
+    "name": "Statue De Jules Vernes",
+    "value": "47.202194, -1.576457"
+  },
+  {
+    "name": "Croix Sainte Marthe",
+    "value": "47.20268, -1.579716"
+  },
+  {
+    "name": "Sta Anna",
+    "value": "47.203999, -1.582999"
+  },
+  {
+    "name": "Cloche Du Cimeti\u00E8re St Anne ancien",
+    "value": "47.2039, -1.583729"
+  },
+  {
+    "name": "Mus\u00E9e Compagnonnique",
+    "value": "47.202724, -1.582842"
+  },
+  {
+    "name": 2049,
+    "value": "47.199641, -1.58143"
+  },
+  {
+    "name": "Chapelle Des Oblates",
+    "value": "47.199281, -1.585768"
+  },
+  {
+    "name": "La Lecture",
+    "value": "47.199624, -1.586227"
+  },
+  {
+    "name": "Mairie de Chantenay",
+    "value": "47.206526, -1.588313"
+  },
+  {
+    "name": "Fresque Inter Braille",
+    "value": "47.207885, -1.590842"
+  },
+  {
+    "name": "Eglise st Martin",
+    "value": "47.199325, -1.59299"
+  },
+  {
+    "name": "Nantes, Gare De Chantenay",
+    "value": "47.197206, -1.594221"
+  },
+  {
+    "name": "Cimeti\u00E8re St Martin Nouveau",
+    "value": "47.204451, -1.594503"
+  },
+  {
+    "name": "Aire De Jeux Etienne Hervais",
+    "value": "47.204865, -1.597414"
+  },
+  {
+    "name": "Boucardi\u00E8re",
+    "value": "47.201525, -1.597588"
+  },
+  {
+    "name": "Maison Des Jardiniers",
+    "value": "47.212589, -1.590542"
+  },
+  {
+    "name": "Croix at Croix-Bonneau",
+    "value": "47.209833, -1.596138"
+  },
+  {
+    "name": "What Does the Fox Say",
+    "value": "47.213303, -1.597865"
+  },
+  {
+    "name": "Amicale Bouliste De La Durantiere",
+    "value": "47.215262, -1.60254"
+  },
+  {
+    "name": "M\u00E9diath\u00E8que",
+    "value": "47.209901, -1.603242"
+  },
+  {
+    "name": "Aire De Jeux Des Lauriers",
+    "value": "47.204258, -1.604349"
+  },
+  {
+    "name": "Bois De La Musse",
+    "value": "47.203677, -1.612456"
+  },
+  {
+    "name": "Parc De Bellevue",
+    "value": "47.208012, -1.609451"
+  },
+  {
+    "name": "Ludoth\u00E8que",
+    "value": "47.203356, -1.605805"
+  },
+  {
+    "name": "Fallait le fer",
+    "value": "47.219685,-1.535313"
+  },
+  {
+    "name": "D6 g\u00E9ant",
+    "value": "47.220788,-1.532852"
+  },
+  {
+    "name": "Pharmacie dalby",
+    "value": "47.222165,-1.530737"
+  },
+  {
+    "name": "Arbre mural presens\u00E9",
+    "value": "47.223375,-1.527459"
+  },
+  {
+    "name": "Poste dalby",
+    "value": "47.225904,-1.529817"
+  },
+  {
+    "name": "La big",
+    "value": "47.219044,-1.513271"
+  },
+  {
+    "name": "Eglise de toutes aides",
+    "value": "47.225715,-1.522698"
+  },
+  {
+    "name": "Jeux pour enfants parc de broussais",
+    "value": "47.226600,-1.521023"
+  },
+  {
+    "name": "Gare de doulon",
+    "value": "47.227357,-1.518020"
+  },
+  {
+    "name": "Terrain de jeu enfant gare doulon",
+    "value": "47.228290,-1.516781"
+  },
+  {
+    "name": "Serre du grand blottereau",
+    "value": "47.227064,-1.511887"
+  },
+  {
+    "name": "Ch\u00E2teau grand blottereau",
+    "value": "47.226268,-1.510784"
+  },
+  {
+    "name": "Parc de la mitrie",
+    "value": "47.227511,-1.526104"
+  },
+  {
+    "name": "Complexe sportif noelembert",
+    "value": "47.230305,-1.526861"
+  },
+  {
+    "name": "Nantes sculpture sur portail",
+    "value": "47.227933,-1.541658"
+  },
+  {
+    "name": "Cavalier de St Donatien",
+    "value": "47.228826,-1.542774"
+  },
+  {
+    "name": "Saint Donatien cath\u00E9drale",
+    "value": "47.229006,-1.542533"
+  },
+  {
+    "name": "Le grand th\u00E9\u00E2tre de Loire Atlantique",
+    "value": "47.230138,-1.539819"
+  },
+  {
+    "name": "Parc du plessis tison",
+    "value": "47.234028,-1.536023"
+  },
+  {
+    "name": "Yeahhaw",
+    "value": "47.232087,-1.531170"
+  },
+  {
+    "name": "Empreinte humaine",
+    "value": "47.235496,-1.541338"
+  },
+  {
+    "name": "Nantes \u00E9glise St Jean bosco",
+    "value": "47.238438,-1.534009"
+  },
+  {
+    "name": "Eglise Saint Augustin",
+    "value": "47.238479,-1.545213"
+  },
+  {
+    "name": "Aire de jeux du port boyer",
+    "value": "47.241386,-1.540160"
+  },
+  {
+    "name": "La campagnol amphibie",
+    "value": "47.243597,-1.544185"
+  },
+  {
+    "name": "Aviron Leo Lagrange",
+    "value": "47.245778,-1.543436"
+  },
+  {
+    "name": "Red face wood sculpture",
+    "value": "47.244316,-1.547634"
+  },
+  {
+    "name": "Moulin du tertre",
+    "value": "47.244552,-1.548327"
+  },
+  {
+    "name": "Eraudiere street art",
+    "value": "47.246049,-1.533186"
+  },
+  {
+    "name": "Mairie annexe de ranzay",
+    "value": "47.253797,-1.530487"
+  },
+  {
+    "name": "Abeille murale",
+    "value": "47.253075,-1.532876"
+  },
+  {
+    "name": "Stade de la beaujoire",
+    "value": "47.256234,-1.526199"
+  },
+  {
+    "name": "Studio Saint Georges",
+    "value": "47.253712,-1.523484"
+  },
+  {
+    "name": "Arlequin",
+    "value": "47.251328,-1.515435"
+  },
+  {
+    "name": "Haluchere batignolles",
+    "value": "47.248801,-1.521921"
+  },
+  {
+    "name": "Parc d'affaires du perray",
+    "value": "47.247725,-1.506834"
+  },
+  {
+    "name": "Vieux r\u00E9servoir d'eau",
+    "value": "47.241283,-1.509507"
+  },
+  {
+    "name": "Mission 1872",
+    "value": "47.242483,-1.494850"
+  },
+  {
+    "name": "Vieux ch\u00E2teau d'eau",
+    "value": "47.238540,-1.500484"
+  },
+  {
+    "name": "\u00C9glise Saint \u00C9lisabeth",
+    "value": "47.222220,-1.536919"
+  },
+  {
+    "name": "Reve d'orient",
+    "value": "47.223736,-1.538233"
+  },
+  {
+    "name": "Maison des \u0153uvres",
+    "value": "47.224160,-1.542208"
+  },
+  {
+    "name": "Statue passage st cristophe",
+    "value": "47.223682,-1.548480"
+  },
+  {
+    "name": "Eglise Saint Cl\u00E9ment",
+    "value": "47.221636,-1.547336"
+  },
+  {
+    "name": "Loenanthique",
+    "value": "47.224167,-1.559205"
+  },
+  {
+    "name": "Place martray",
+    "value": "47.220252,-1.560870"
+  },
+  {
+    "name": "Les promenade de l'erdre",
+    "value": "47.225305,-1.553178"
+  },
+  {
+    "name": "La cocotte en verre",
+    "value": "47.226808,-1.554099"
+  },
+  {
+    "name": "Vaisseau odyss\u00E9e",
+    "value": "47.228179,-1.553429"
+  },
+  {
+    "name": "Eglise Saint F\u00E9lix",
+    "value": "47.231102,-1.555850"
+  },
+  {
+    "name": "Enfant en ballade",
+    "value": "47.232373,-1.556380"
+  },
+  {
+    "name": "Tete de lion",
+    "value": "47.227461,-1.560817"
+  },
+  {
+    "name": "Facult\u00E9 de sciences michelet",
+    "value": "47.235203,-1.556266"
+  },
+  {
+    "name": "Biblioth\u00E8que universitaire de math\u00E9matiques",
+    "value": "47.237467,-1.552695"
+  },
+  {
+    "name": "Mur des lamentations facult\u00E9 de Nantes",
+    "value": "47.237912,-1.553284"
+  },
+  {
+    "name": "Ponton h\u00E9riss\u00E9",
+    "value": "47.238493,-1.550367"
+  },
+  {
+    "name": "Ich bin ein berline",
+    "value": "47241034,-1.557243"
+  },
+  {
+    "name": "Parc du petit port",
+    "value": "47.243731,-1.556686"
+  },
+  {
+    "name": "La fac quel calvaire",
+    "value": "47.243857,-1.554099"
+  },
+  {
+    "name": "Sapin lettre",
+    "value": "47.245700,-1.552111"
+  },
+  {
+    "name": "Red face wood sculpture",
+    "value": "47.244316,-1.547634"
+  },
+  {
+    "name": "Moulin du tertre",
+    "value": "47,244552,-1.548327"
+  },
+  {
+    "name": "Nantes ecn essai catapulte",
+    "value": "47.250217,-1.548573"
+  },
+  {
+    "name": "Orion d'arago",
+    "value": "47.250670,-1.551883"
+  },
+  {
+    "name": "Eglise St Fran\u00E7ois d'assise",
+    "value": "47.253099,-1.556673"
+  },
+  {
+    "name": "Pistes d'athl\u00E9tisme universitaires du petit port",
+    "value": "47.248364,-1.557457"
+  },
+  {
+    "name": "Terrain de foot",
+    "value": "47.247933,-1.563436"
+  },
+  {
+    "name": "Eglise Saint pasquier",
+    "value": "47.228602,-1.565847"
+  },
+  {
+    "name": "Facade circle",
+    "value": "47.226740,-1.568408"
+  },
+  {
+    "name": "Ker Arthur",
+    "value": "47.227587,-1.569426"
+  },
+  {
+    "name": "Street art cococinelle",
+    "value": "47.228356,-1.570936"
+  },
+  {
+    "name": "Port manart",
+    "value": "47.229451,-1.572563"
+  },
+  {
+    "name": "Square Gaston Michel",
+    "value": "47.234939,-1.571197"
+  },
+  {
+    "name": "Octroi de Nantes",
+    "value": "47.238404,-1.570149"
+  },
+  {
+    "name": "Eglise Sainte Th\u00E9r\u00E8se",
+    "value": "47.232451,-1.577409"
+  },
+  {
+    "name": "Fresque murale",
+    "value": "47.233828,-1.581564"
+  },
+  {
+    "name": "Ministere des affaires \u00E9trang\u00E8res",
+    "value": "47.233686,-1.584286"
+  },
+  {
+    "name": "Tag beau s\u00E9jour",
+    "value": "47.238132,-1.586963"
+  },
+  {
+    "name": "Jeux de la vall\u00E9e des cens",
+    "value": "47.244173,-1.570225"
+  },
+  {
+    "name": "Nantes fontaine au lion",
+    "value": "47.242091,-1.578747"
+  },
+  {
+    "name": "Ch\u00E2teau de la gaudiniere",
+    "value": "47.243308,-1.578257"
+  },
+  {
+    "name": "Eclair ta lanterne rhododendron",
+    "value": "47.244496,-1.581604"
+  },
+  {
+    "name": "Puits de la gobiniere",
+    "value": "47.248933,-1.584745"
+  },
+  {
+    "name": "Ch\u00E2teau de la gobiniere",
+    "value": "47.249296,-1.584513"
+  },
+  {
+    "name": "Les arbres de la vall\u00E9e",
+    "value": "47.249514,-1.579048"
+  },
+  {
+    "name": "Eglise notre Dame de lourdes",
+    "value": "47.248730,-1.576875"
+  },
+  {
+    "name": "Morphologie d'un cours d'eau",
+    "value": "47.253021,-1.588293"
+  },
+  {
+    "name": "Poste dorvault",
+    "value": "47.253213,-1.596637"
+  }
+]
+}
