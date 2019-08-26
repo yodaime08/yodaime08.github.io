@@ -371,46 +371,60 @@ body {
  * Weather forecast card
  */
 
+.raid-template {
+	background: #EAF7FB;
+	border-radius: 40px;
+	box-shadow:
+	0 2px 2px 0 rgba(0, 0, 0, 0.14),
+	0 3px 1px -2px rgba(0, 0, 0, 0.2),
+	0 1px 5px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	margin: 16px;
+	padding: 16px;
+}
+
 .raid-card {
-  background: #EAF7FB;
-  border-radius: 40px;
-  box-shadow:
-    0 2px 2px 0 rgba(0, 0, 0, 0.14),
-    0 3px 1px -2px rgba(0, 0, 0, 0.2),
-    0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  box-sizing: border-box;
-  margin: 16px;
-  padding: 16px;
-  position: relative;
+	display: flex;
+	align-items: right;
+	justify-content: right;
 }
 
-.raid-card .remove-raid {
-  background-color: transparent;
-  border: none;
-  float: right;
-  font-size: x-large;
+.icon {
+	width: 42px;
+	height: 42px;
 }
 
-.raid-card .raid {
-	font-size: 1em;
+.info-raid {
+	width:  80%;
 }
 
-.raid-card .raid .niveau-raid {
-	width:  15%;
-	height: 50%;
+.bouton-raid {
+	display: flex;
+	flex-direction: column;
 }
 
-.raid-card .raid .niveau-raid .icon {
-  float: left;
-  width: 64px;
-  height: 64px;
+.remove-raid {
+	background-color: transparent;
+	border: none;
+	float: right;
+	font-size: x-large;
 }
 
-.raid-card .raid .info-raid {
-	display: inline-block;
+.follow-raid {
+	background-color: transparent;
+	border: none;
+	float: right;
+	/*font-size: x-large;*/
 }
 
+.unfollow-raid {
+	background-color: transparent;
+	border: none;
+	float: right;
+	/*font-size: x-large;*/
+}
 
+/*
 .raid-card .current {
   display: flex;
 }
@@ -467,7 +481,7 @@ body {
 /**
  * Media query to adjust size of content for small screens
  */
-
+/*
 @media (max-width: 450px) {
   .raid-card .date,
   .raid-card .description {
@@ -487,4 +501,5 @@ body {
     height: 32px;
     width: 32px;
   }
+*/
 }

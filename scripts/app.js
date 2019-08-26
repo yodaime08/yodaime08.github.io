@@ -88,15 +88,24 @@ function getDate()
 
 function renderRaid(card, raid) 
 {
-	card.querySelector('.arene').textContent  = "Arène : " + raid.arene;
+	card.querySelector('.arene').textContent     = "Arène : " + raid.arene;
     card.querySelector('.heureRaid').textContent = "Heure de lancement : " + raid.heureLancement;
 	card.querySelector('.geo').textContent       = "Coordonnée : " + raid.geo ;
+	card.querySelector('.lien').href             = "http://www.google.com/maps/place/"+raid.geo ;
+	card.querySelector('.niveau').textContent    = "Raid Niveau " + raid.niveau ;
 	
-	card.querySelector('.niveau-raid .icon-raid').className = `icon raid${raid.niveau}`;
+	var iconRaid = card.querySelector('.icon-raid') ;
 	
-	card.querySelector('.lien').href = "http://www.google.com/maps/place/"+raid.geo ;
+	if ( iconRaid != null )
+	{
+		card.querySelector('.icon-raid').className   = `icon raid${raid.niveau}`;
+	}
+	else
+	{
+		card.querySelector('.icon').className = `icon raid${raid.niveau}`;
+	}
 	
-	card.querySelector('.niveau').textContent = "Raid Niveau " + raid.niveau ;
+	
 	
 	// If the loading spinner is still visible, remove it.
 	const spinner = card.querySelector('.card-spinner');
@@ -111,7 +120,7 @@ function renderRaid(card, raid)
  * @param {Event} evt
  */
 function removeLocation(evt) {
-  const parent = evt.srcElement.parentElement;
+  const parent = evt.srcElement.parentElement.parentElement.parentElement;
   parent.remove();
   if (weatherApp.selectedLocations[parent.id]) {
     delete weatherApp.selectedLocations[parent.id];
@@ -245,13 +254,15 @@ function getRaidCard(raid) {
     return card;
   }
   const newCard = document.getElementById('raid-template').cloneNode(true);
-  //newCard.querySelector('.location').textContent = newCard.querySelector('.location').textContent + raid.arene;
-  //newCard.querySelector('.heureRaid').textContent = newCard.querySelector('.heureRaid').textContent + raid.heureLancement;
   newCard.setAttribute('id', id);
   newCard.querySelector('.remove-raid').addEventListener('click', removeLocation);
   document.querySelector('main').appendChild(newCard);
   newCard.removeAttribute('hidden');
   return newCard;
+  
+  //Pour info
+  //newCard.querySelector('.location').textContent = newCard.querySelector('.location').textContent + raid.arene;
+  //newCard.querySelector('.heureRaid').textContent = newCard.querySelector('.heureRaid').textContent + raid.heureLancement;
 }
 
 /**

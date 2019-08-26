@@ -26,12 +26,12 @@
 	<title>RAID</title>
 	<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 	<link rel="manifest" href="/manifest.json">
-
-	<link rel="stylesheet" type="text/css" href="/styles/inline.css">
 	<!-- Bootstrap stylesheet -->
 	<link rel="stylesheet" type="text/css" href="/styles/bootstrap.min.css">
 	<!-- ClockPicker Stylesheet -->
 	<link rel="stylesheet" type="text/css" href="/styles/jquery-clockpicker.min.css">
+	<!--App stylesheet-->
+	<link rel="stylesheet" type="text/css" href="/styles/inline.css">
 
 	<!-- Jquery -->
 	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
@@ -61,29 +61,15 @@
 	</header>
 
 	<main id="main" class="main">
-
-		<!--<button id="butAdd" class="fab" aria-label="Add">
-			<span class="icon add"></span>
-		</button>
-
-		<button id="butRefresh" class="fab2" aria-label="Refresh">
-			<span class="icon refresh"></span>
-		</button>-->
-
-		<div id="raid-template" class="raid-card" hidden>
+		<div id="raid-template" class="raid-template" hidden>
 			<div class="card-spinner">
 				<svg viewBox="0 0 32 32" width="32" height="32">
 					<circle cx="16" cy="16" r="14" fill="none"></circle>
 				</svg>
-			</div>
-
-			<button class="remove-raid">&times;</button>
-
-			<div class="raid">
-				<div class="niveau-raid">
-					<div class="icon-raid"></div>			
-				</div>
-				
+			</div>					
+			<div class="raid-card">				
+				<div class="icon-raid"></div>			
+							
 				<div class="info-raid">
 					<div class="raid-key" hidden></div>
 					<div class="card-last-updated" hidden></div>
@@ -93,7 +79,13 @@
 					<div class="date" hidden>&nbsp;</div>
 					<div class="heureRaid">Heure de lancement : &nbsp;</div>
 				</div>
-			</div>		
+				
+				<div class="bouton-raid">
+					<button class="remove-raid">&times;</button>
+					<button class="follow-raid">+</button>
+					<button class="unfollow-raid">-</button>
+				</div>						
+			</div>
 		</div>
 		
 	</main>
