@@ -34,7 +34,7 @@
 	<link rel="stylesheet" type="text/css" href="/styles/inline.css">
 
 	<!-- Jquery -->
-	<script type="text/javascript" src="/scripts/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 	<!-- Select2 -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.9/css/select2.min.css" rel="stylesheet" />
@@ -45,9 +45,17 @@
 	<script type="text/javascript" src="/scripts/jquery-clockpicker.min.js"></script>
 	<script type="text/javascript" src="/scripts/highlight.min.js"></script>
 	
-  <!-- CODELAB: Add iOS meta tags and icons -->
-  <!-- CODELAB: Add description here -->
-  <!-- CODELAB: Add meta theme-color -->
+	<!-- iOS meta tags and icons -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-title" content="Weather PWA">
+	<link rel="apple-touch-icon" href="/images/icons/icon-152x152.png">
+	
+	<!-- Description -->
+	<meta name="description" content="Apllication pour les Raid Pokémon go sur Nantes">
+	
+	<!-- Meta theme-color -->
+	<meta name="theme-color" content="#2F3BA2" />
 
 </head>
 <body>
@@ -75,7 +83,7 @@
 					<div class="card-last-updated" hidden></div>
 					<div class="niveau">Raid Niveau </div>
 					<div class="arene">Arène : &nbsp;</div>
-					<a class="lien" target="_blank"><div class="geo">Coordonnée : </div></a>
+					<a class="lien" target="_blank" rel="noreferrer"><div class="geo">Coordonnée : </div></a>
 					<div class="date" hidden>&nbsp;</div>
 					<div class="heureRaid">Heure de lancement : &nbsp;</div>
 				</div>
@@ -130,7 +138,14 @@
 	<script src="/scripts/app.js"></script>
 	<!-- CODELAB: Add the install script here -->
 	<script>
-	// CODELAB: Register service worker.
+		if ('serviceWorker' in navigator) {
+		  window.addEventListener('load', () => {
+			navigator.serviceWorker.register('/service-worker.js')
+				.then((reg) => {
+				  console.log('Service worker registered.', reg);
+				});
+		  });
+		}
 	</script>
 </body>
 </html>

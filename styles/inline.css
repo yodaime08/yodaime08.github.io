@@ -329,7 +329,7 @@ body {
   min-width: 280px;
   max-width: 300px;
   position: absolute;
-  top: 20%;
+  top: 50%;
   transform: translate(-50%, -50%) translateY(30px);
   transition: transform 0.333s cubic-bezier(0, 0, 0.21, 1) 0.05s;
 }
