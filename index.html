@@ -67,8 +67,12 @@
 		<button id="butRefresh" aria-label="Refresh"></button>
 		<button id="butInstall" aria-label="Install"></button>
 	</header>
-
 	<main id="main" class="main">
+
+		<div id="info-notification" class="info-notification" hidden>
+			Notification désactivée
+		</div>
+
 		<div id="raid-template" class="raid-template" hidden>
 			<div class="card-spinner">
 				<svg viewBox="0 0 32 32" width="32" height="32">
@@ -135,15 +139,5 @@
 	</script>
 	<script src="/scripts/app.js"></script>
 	<script src="/scripts/install.js"></script>
-	<script>
-		if ('serviceWorker' in navigator) {
-		  window.addEventListener('load', () => {
-			navigator.serviceWorker.register('/service-worker.js')
-				.then((reg) => {
-				  console.log('Service worker registered.', reg);
-				});
-		  });
-		}
-	</script>
 </body>
 </html>
