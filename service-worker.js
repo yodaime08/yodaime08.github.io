@@ -17,13 +17,15 @@
  */
 'use strict';
 
-// CODELAB: Update cache names any time any of the cached files change.
+//Update cache names any time any of the cached files change.
 const CACHE_NAME = 'static-cache-v1';
 
-// CODELAB: Add list of files to cache here.
+//List of files to cache here.
 const FILES_TO_CACHE = [
   '/offline.html',
 ];
+
+const applicationServerPublicKey = 'BHQ2zREJPg_3gRLkilQURwst-AkWliJt1FX2Hzkp_39UDgbTx6UW5TeyrY1IUxIMDBPnbjLcs07ba8zHXxChsBM';
 
 self.addEventListener('install', (evt) => 
 {
@@ -40,26 +42,41 @@ self.addEventListener('install', (evt) =>
 	self.skipWaiting();
 });
 
-self.addEventListener('activate', (evt) => 
+self.addEventListener('activate', async () => 
 {
 	console.log('[ServiceWorker] Activate');
+	
 	// Remove previous cached data from disk.
-	evt.waitUntil
-	(
-		caches.keys().then((keyList) => 
+	caches.keys().then((keyList) => 
+	{
+		return Promise.all(keyList.map((key) => 
 		{
-			return Promise.all(keyList.map((key) => 
+			if (key !== CACHE_NAME) 
 			{
-				if (key !== CACHE_NAME) 
-				{
-					console.log('[ServiceWorker] Removing old cache', key);
-					return caches.delete(key);
-				}
-			}));
-		})
-	);
+				console.log('[ServiceWorker] Removing old cache', key);
+				return caches.delete(key);
+			}
+		}));
+	});
 	self.clients.claim();
-});
+
+	// This will be called only once when the service worker is activated.
+	try
+	{
+		const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey)
+		const options = { applicationServerKey, userVisibleOnly: true }
+		const subscription = await self.registration.pushManager.subscribe(options)
+		console.log(JSON.stringify(subscription))
+		const response = await saveSubscription(subscription)
+		console.log(response)
+	} 
+	catch (err) 
+	{
+		console.log('[ServiceWorker] Error', err)
+	}
+})
+
+ 
 
 self.addEventListener('fetch', (evt) => 
 {
@@ -82,8 +99,37 @@ self.addEventListener('fetch', (evt) =>
 	);
 });
 
-self.addEventListener('activate', async () => 
+self.addEventListener('push', (evt) => 
 {
-	// This will be called only once when the service worker is activated.
-	console.log('service worker activate');
+	console.log('[Service Worker] Push Received.');
+	console.log(`[Service Worker] Push had this data: "${evt.data.text()}"`);
+
+	const title = 'Raid PoGo';
+	const options = {
+		body: 'Notifications',
+		icon: 'images/icons/icon-192x192.png',
+		badge: 'images/icons/icon-192x192.png'
+	};
+
+	evt.waitUntil(self.registration.showNotification(title, options));
 });
+
+self.addEventListener('notificationclick', (evt) => 
+{
+	evt.notification.close();
+	console.log('[Service Worker] Notification closed.');
+});
+
+// urlB64ToUint8Array is a magic function that will encode the base64 public key
+// to Array buffer which is needed by the subscription option
+const urlB64ToUint8Array = base64String => 
+{
+	const padding = '='.repeat((4 - (base64String.length % 4)) % 4)
+	const base64 = (base64String + padding).replace(/\-/g, '+').replace(/_/g, '/')
+	const rawData = atob(base64)
+	const outputArray = new Uint8Array(rawData.length)
+	for (let i = 0; i < rawData.length; ++i) {
+		outputArray[i] = rawData.charCodeAt(i)
+	}
+	return outputArray
+}
