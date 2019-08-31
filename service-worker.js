@@ -20,12 +20,15 @@
 //Update cache names any time any of the cached files change.
 const CACHE_NAME = 'static-cache-v1';
 
+const FORECAST_DELAY = 0;
+
 //List of files to cache here.
 const FILES_TO_CACHE = [
   '/offline.html',
 ];
 
-const applicationServerPublicKey = 'BHQ2zREJPg_3gRLkilQURwst-AkWliJt1FX2Hzkp_39UDgbTx6UW5TeyrY1IUxIMDBPnbjLcs07ba8zHXxChsBM';
+/*const applicationServerPublicKey = 'BHQ2zREJPg_3gRLkilQURwst-AkWliJt1FX2Hzkp_39UDgbTx6UW5TeyrY1IUxIMDBPnbjLcs07ba8zHXxChsBM';*/
+var applicationServerPublicKey = 'init';
 
 self.addEventListener('install', (evt) => 
 {
@@ -63,6 +66,7 @@ self.addEventListener('activate', async () =>
 	// This will be called only once when the service worker is activated.
 	try
 	{
+		applicationServerPublicKey = await getVAPIDPublicKey();
 		const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
 		const options = { applicationServerKey, userVisibleOnly: true };
 		const subscription = await self.registration.pushManager.subscribe(options);
@@ -101,10 +105,12 @@ self.addEventListener('push', (evt) =>
 {
 	console.log('[Service Worker] Push Received.');
 	console.log(`[Service Worker] Push had this data: "${evt.data.text()}"`);
+	
+	var notificationText = evt.data.text();
 
 	const title = 'Raid PoGo';
 	const options = {
-		body: 'Notifications',
+		body: notificationText,
 		icon: 'images/icons/icon-192x192.png',
 		badge: 'images/icons/icon-192x192.png'
 	};
@@ -130,4 +136,39 @@ const urlB64ToUint8Array = base64String =>
 		outputArray[i] = rawData.charCodeAt(i)
 	}
 	return outputArray;
-}
+};
+
+const saveSubscription = async subscription => 
+{
+	const SERVER_URL = "http://localhost:4000/save-subscription";
+	const response = await fetch(SERVER_URL, 
+	{
+		method: "post",
+		headers: {
+		"Content-Type": "application/json"
+		},
+		body: JSON.stringify(subscription)
+	});
+	return response.json();
+};
+
+const getVAPIDPublicKey = async keys => 
+{
+	const SERVER_URL = "http://localhost:4000/get-keys";
+	
+	var myHeaders = new Headers();
+
+	var myInit = { 	method: 'GET',
+					headers: {
+						"Content-Type": "application/json"
+					}	
+					//,mode: 'cors'
+					//,cache: 'default' 
+				};
+	
+	const response = await fetch(SERVER_URL, myInit) ;
+	
+	return response;
+};
+
+
