@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License
  */
-'use strict';
+//'use strict';
 
 //Update cache names any time any of the cached files change.
 const CACHE_NAME = 'static-cache-v1';
@@ -66,8 +66,8 @@ self.addEventListener('activate', async () =>
 	// This will be called only once when the service worker is activated.
 	try
 	{
-		applicationServerPublicKey = await getVAPIDPublicKey();
-		const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey);
+		var applicationServerPublicKey = await getVAPIDPublicKey() ;
+		const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey.value);
 		const options = { applicationServerKey, userVisibleOnly: true };
 		const subscription = await self.registration.pushManager.subscribe(options);
 		console.log(JSON.stringify(subscription));
@@ -152,7 +152,7 @@ const saveSubscription = async subscription =>
 	return response.json();
 };
 
-const getVAPIDPublicKey = async keys => 
+const getVAPIDPublicKey = async applicationServerPublicKey => 
 {
 	const SERVER_URL = "http://localhost:4000/get-keys";
 	
@@ -166,9 +166,14 @@ const getVAPIDPublicKey = async keys =>
 					//,cache: 'default' 
 				};
 	
-	const response = await fetch(SERVER_URL, myInit) ;
+	const response = await fetch(SERVER_URL, 
+	{
+		method: "GET",
+		headers: { "Content-Type": "application/json" }
+	});
 	
-	return response;
+	return response.json();
+
 };
 
 
