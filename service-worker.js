@@ -143,7 +143,7 @@ const saveSubscription = async subscription =>
 	const SERVER_URL = "http://localhost:4000/save-subscription";
 	const response = await fetch(SERVER_URL, 
 	{
-		method: "post",
+		method: "POST",
 		headers: {
 		"Content-Type": "application/json"
 		},
@@ -155,17 +155,7 @@ const saveSubscription = async subscription =>
 const getVAPIDPublicKey = async applicationServerPublicKey => 
 {
 	const SERVER_URL = "http://localhost:4000/get-keys";
-	
-	var myHeaders = new Headers();
-
-	var myInit = { 	method: 'GET',
-					headers: {
-						"Content-Type": "application/json"
-					}	
-					//,mode: 'cors'
-					//,cache: 'default' 
-				};
-	
+		
 	const response = await fetch(SERVER_URL, 
 	{
 		method: "GET",
