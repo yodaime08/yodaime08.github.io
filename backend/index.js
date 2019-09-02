@@ -49,9 +49,27 @@ function saveToDatabase(subscription) {
 
 /****** Web Push ********************************/
 
-function sendNotification(subscription, dataToSend)
-{
-    webpush.sendNotification(subscription, dataToSend);
+const sendNotif = (subscription, dataToSend) => {
+    //webpush.sendNotification(subscription, dataToSend);
+    const options = {
+        vapidDetails: {
+          subject: 'mailto:yodaime_sensei@hotmail.com',
+          publicKey: vapidKeys.publicKey,
+          privateKey: vapidKeys.privateKey
+        },
+        /*headers: {
+          'Authorization': 'Basic YWxhZGRpbjpvcGVuc2VzYW1l'
+        }*/
+      }
+    webpush.sendNotification(subscription, dataToSend, options)
+    .then
+    (
+        console.log('[Backend] Notification send')
+    )
+    .catch
+    (
+        console.log('[Backend] Fait to send notification')
+    );
 }
 
 /************************************************/
@@ -93,9 +111,15 @@ function sendNotification(req, resp)
         {
             const message = 'Notification test';
             notificationSend == true ;
-            //sendNotification(subscription, message);            
-            webpush.sendNotification(subscription, message);
-            resp.json({message: 'message sent'});
+            try
+            {
+                var temp = sendNotif(subscription, message);
+                resp.json({message: 'message sent'});
+            }            
+            catch( err )
+            {
+                console.log(err);
+            }            
         }
     }
 }
@@ -127,7 +151,7 @@ function startServer()
         });
     
         // Logging for each request
-        /*app.use((req, resp, next) => 
+        app.use((req, resp, next) => 
         {
             const now = new Date();
             const time = `${now.toLocaleDateString()} - ${now.toLocaleTimeString()}`;
@@ -136,7 +160,7 @@ function startServer()
             // eslint-disable-next-line no-console
             console.log(m);
             next();
-        });*/
+        });
     
         // Handle requests for the data
         app.get('/get-keys', getKeys);
@@ -144,7 +168,7 @@ function startServer()
         app.post('/save-subscription', saveSubscription);
     
         // Handle requests for static files
-        //app.use(express.static('public'));
+        app.use(express.static('public'));
 
         //Content-Security-Policy: img-src http://localhost:4000/;
     
