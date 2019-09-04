@@ -27,8 +27,11 @@ const FILES_TO_CACHE = [
   '/offline.html',
 ];
 
-/*const applicationServerPublicKey = 'BHQ2zREJPg_3gRLkilQURwst-AkWliJt1FX2Hzkp_39UDgbTx6UW5TeyrY1IUxIMDBPnbjLcs07ba8zHXxChsBM';*/
+var subscriptionSaved = false;
+
 var applicationServerPublicKey = 'init';
+
+var subscription = 'init';
 
 self.addEventListener('install', (evt) => 
 {
@@ -43,6 +46,7 @@ self.addEventListener('install', (evt) =>
 		})
 	);
 	self.skipWaiting();
+	console.log('[ServiceWorker] Installed');
 });
 
 self.addEventListener('activate', async () => 
@@ -69,14 +73,16 @@ self.addEventListener('activate', async () =>
 		var applicationServerPublicKey = await getVAPIDPublicKey() ;
 		const applicationServerKey = urlB64ToUint8Array(applicationServerPublicKey.value);
 		const options = { applicationServerKey, userVisibleOnly: true };
-		const subscription = await self.registration.pushManager.subscribe(options);
+		subscription = await self.registration.pushManager.subscribe(options);
 		console.log(JSON.stringify(subscription));
 		const response = await saveSubscription(subscription);
 		console.log(response);
+		console.log('[ServiceWorker] Activated');
+		subscriptionSaved = true;
 	} 
 	catch (err) 
 	{
-		console.log('[ServiceWorker] Error', err);
+		console.log('[ServiceWorker] Error during activation', err);
 	}
 })
 

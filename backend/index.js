@@ -49,26 +49,39 @@ function saveToDatabase(subscription) {
 
 /****** Web Push ********************************/
 
-const sendNotif = (subscription, dataToSend) => {
-    //webpush.sendNotification(subscription, dataToSend);
-    const options = {
-        vapidDetails: {
+//const sendNotif = (subscription, dataToSend) => {
+function sendNotif(subscription, dataToSend)
+{
+    const options = 
+    {
+        vapidDetails: 
+        {
           subject: 'mailto:yodaime_sensei@hotmail.com',
           publicKey: vapidKeys.publicKey,
           privateKey: vapidKeys.privateKey
-        },
+        }
         /*headers: {
           'Authorization': 'Basic YWxhZGRpbjpvcGVuc2VzYW1l'
         }*/
-      }
+    }
     webpush.sendNotification(subscription, dataToSend, options)
     .then
     (
-        console.log('[Backend] Notification send')
+        function (data) 
+        {
+            return 'OK';
+        },
+        function (err) 
+        {
+            return err;
+        }
     )
     .catch
     (
-        console.log('[Backend] Fait to send notification')
+        function (ex) 
+        {
+            return new Error(ex) ;
+        }
     );
 }
 
@@ -104,6 +117,7 @@ function sendNotification(req, resp)
     if( subscription == null )
     {
         console.log('[Backend] No subscription');
+        resp.json({message: 'No subscription'});
     }
     else
     {
@@ -114,14 +128,22 @@ function sendNotification(req, resp)
             try
             {
                 var temp = sendNotif(subscription, message);
-                resp.json({message: 'message sent'});
+                resp.json(temp);
             }            
             catch( err )
             {
                 console.log(err);
-            }            
+            }
         }
     }
+}
+
+function checkNotif(req, resp)
+{
+    var response = { value: vapidKeys.publicKey} ;
+    //resp.json(response);
+    resp.setHeader('Content-Type', 'application/json');
+    resp.end(JSON.stringify(response));
 }
 
 /*********************************************** */
@@ -165,6 +187,8 @@ function startServer()
         // Handle requests for the data
         app.get('/get-keys', getKeys);
         app.get('/send-notification', sendNotification);
+        app.get('/check-notification', checkNotif);
+
         app.post('/save-subscription', saveSubscription);
     
         // Handle requests for static files

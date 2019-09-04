@@ -26,27 +26,35 @@ const raidApp =
 /********** Notification ********************/
 const SERVICE_WORKER = '/service-worker.js';
 
+const SERVEUR_URL = 'http://localhost:4000';
+
 const check = () => 
 {
 	if (!("serviceWorker" in navigator)) 
 	{
-		throw new Error("No Service Worker support!");
+		throw new Error("[Apps] Service Worker not supported");
 	}
 	if (!("PushManager" in window)) 
 	{
-		throw new Error("No Push API Support!");
+		document.getElementById('info-notification-ko').removeAttribute('hidden');
+		throw new Error("[Apps] Push API not supported");
 	}
+	console.log('[Apps] Service Worker checked');
 };
   
 const registerServiceWorker = async () => 
 {
 	const swRegistration = await navigator.serviceWorker.register(SERVICE_WORKER);
+
+	console.log('[Apps] Service Worker registrated');
+
 	return swRegistration;
 };
   
 const requestNotificationPermission = async () => 
 {
 	const permission = await window.Notification.requestPermission();
+	console.log('[Apps] Notification permission requested');
 	// value of permission can be 'granted', 'default', 'denied'
 	// granted: user has accepted the request
 	// default: user has dismissed the notification permission popup by clicking on x
@@ -57,18 +65,12 @@ const requestNotificationPermission = async () =>
 
 		if (Notification.permission === 'denied') 
 		{
-			document.getElementById('info-notification').removeAttribute('hidden');
+			document.getElementById('info-notification-ko').removeAttribute('hidden');
+			document.getElementById('info-notification-ko').innerHTML = 'Notification désactivée. <br>Pour les réactiver, modifier les paramètres du site dans le navigateur'
 		}
 	}
 };
   
-const main = async () => 
-{
-	check();
-	const swRegistration = await registerServiceWorker();
-	const permission = await requestNotificationPermission();
-};
-
 // urlB64ToUint8Array is a magic function that will encode the base64 public key
 // to Array buffer which is needed by the subscription option
 const urlB64ToUint8Array = base64String => 
@@ -207,9 +209,9 @@ function removeRaid(evt)
  * @param {string} coords Location object to.
  * @return {Object} The weather forecast, if the request fails, return null.
  */
-function getRaidFromNetwork(coords) 
+function getRaidFromNetwork() 
 {
-	var retour = fetch(`/forecast/${coords}`)
+	/*var retour = fetch(SERVEUR_URL+'/send-notification')
 	.then
 	(	
 		(response) => {	return response.json(); } 
@@ -219,32 +221,40 @@ function getRaidFromNetwork(coords)
 		() => { return null; } 
 	);  
 	  
-	return retour ;
+	return retour ;*/
+	
+	// A COMPLETER
 }
 
 /**
- * Get's the cached forecast data from the caches object.
+ * Verify if the connexion with the backend is operationnal
  *
- * @param {string} coords Location object to.
- * @return {Object} The weather forecast, if the request fails, return null.
+ * @return {Object} A notification, if the request fails, return null.
  */
-function getRaidFromCache(coords) {
-	// Get Raid forecast from the caches object.
-	if (!('caches' in window)) {
-	return null;
-	}
-	const url = `${window.location.origin}/forecast/${coords}`;
-	return caches.match(url)
-	.then((response) => {
-	  if (response) {
-		return response.json();
-	  }
-	  return null;
-	})
-	.catch((err) => {
-	  console.error('Error getting data from cache', err);
-	  return null;
-	});
+function getNotificationCheck() 
+{
+	var retour = 
+	fetch
+	(
+		SERVEUR_URL+'/check-notification',
+		{
+			method: "GET",
+			headers: 
+			{
+				"Content-Type": "application/json"
+			}
+		}
+	)
+	.then
+	(	
+		(response) => {	return response; } 
+	)
+	.catch
+	( 
+		() => { return null; } 
+	);  
+	  
+	return retour ;
 }
 
 /**
@@ -359,7 +369,39 @@ function init()
 			document.getElementById('selectRaidToAdd').add(new Option(val.name, val.value))
 		});		
 	});
+	
+	getNotificationCheck()
+	.then
+	( 
+		function(res) 
+		{
+			if( res.status == 200 )
+			{
+				document.getElementById('info-notification-ok').removeAttribute('hidden');
+			}
+			else
+			{
+				document.getElementById('info-notification-ko').removeAttribute('hidden');
+				document.getElementById('info-notification-ko').innerHTML = 'Erreur ' + res.status + '<br>Veuillez recharcher la page';				
+			}
+		}
+		
+	)
+	.catch
+	(
+		function (err) 
+		{ 
+			console.log('[Apps] Error when contacting backend');
+		}
+	);
 }
+
+const main = async () => 
+{
+	check();
+	const swRegistration = await registerServiceWorker();
+	const permission = await requestNotificationPermission();
+};
 
 main();
 init();
