@@ -84,7 +84,7 @@ const urlB64ToUint8Array = base64String =>
 		outputArray[i] = rawData.charCodeAt(i)
 	}
 	return outputArray
-  }
+}
 
 
 /***********************************************/
@@ -140,7 +140,7 @@ function addLocation()
 
 	// Save the updated list of selected raid.
 	raidApp.selectedLocations[id] = raid;
-	saveLocationList(raidApp.selectedLocations);
+	saveRaidList(raidApp.selectedLocations);
 
 	document.getElementById('main').scrollTop = document.getElementById('main').scrollHeight + 100 ;
 }
@@ -199,7 +199,7 @@ function removeRaid(evt)
 	if (raidApp.selectedLocations[parent.id]) 
 	{
 		delete raidApp.selectedLocations[parent.id];
-		saveLocationList(raidApp.selectedLocations);
+		saveRaidList(raidApp.selectedLocations);
 	}
 }
 
@@ -224,37 +224,6 @@ function getRaidFromNetwork()
 	return retour ;*/
 	
 	// A COMPLETER
-}
-
-/**
- * Verify if the connexion with the backend is operationnal
- *
- * @return {Object} A notification, if the request fails, return null.
- */
-function getNotificationCheck() 
-{
-	var retour = 
-	fetch
-	(
-		SERVEUR_URL+'/check-notification',
-		{
-			method: "GET",
-			headers: 
-			{
-				"Content-Type": "application/json"
-			}
-		}
-	)
-	.then
-	(	
-		(response) => {	return response; } 
-	)
-	.catch
-	( 
-		() => { return null; } 
-	);  
-	  
-	return retour ;
 }
 
 /**
@@ -309,7 +278,7 @@ function updateData()
  *
  * @param {Object} locations The list of locations to save.
  */
-function saveLocationList(locations) 
+function saveRaidList(locations) 
 {
 	const data = JSON.stringify(locations);
 	localStorage.setItem('locationList', data);
@@ -320,7 +289,7 @@ function saveLocationList(locations)
  *
  * @return {Array}
  */
-function loadLocationList() 
+function loadRaidList() 
 {
 	let locations = localStorage.getItem('locationList');
 	if (locations) 
@@ -351,7 +320,7 @@ function loadLocationList()
 function init() 
 {
 	// Get the raid list, and update the UI.
-	raidApp.selectedLocations = loadLocationList();
+	raidApp.selectedLocations = loadRaidList();
 	updateData();
 
 	// Set up the event handlers for all of the buttons.
@@ -368,32 +337,7 @@ function init()
 		{
 			document.getElementById('selectRaidToAdd').add(new Option(val.name, val.value))
 		});		
-	});
-	
-	getNotificationCheck()
-	.then
-	( 
-		function(res) 
-		{
-			if( res.status == 200 )
-			{
-				document.getElementById('info-notification-ok').removeAttribute('hidden');
-			}
-			else
-			{
-				document.getElementById('info-notification-ko').removeAttribute('hidden');
-				document.getElementById('info-notification-ko').innerHTML = 'Erreur ' + res.status + '<br>Veuillez recharcher la page';				
-			}
-		}
-		
-	)
-	.catch
-	(
-		function (err) 
-		{ 
-			console.log('[Apps] Error when contacting backend');
-		}
-	);
+	})
 }
 
 const main = async () => 

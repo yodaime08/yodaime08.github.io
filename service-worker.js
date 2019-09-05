@@ -1,20 +1,3 @@
-/*
- * @license
- * Your First PWA Codelab (https://g.co/codelabs/pwa)
- * Copyright 2019 Google Inc. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     https://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License
- */
 //'use strict';
 
 //Update cache names any time any of the cached files change.
@@ -33,6 +16,63 @@ var applicationServerPublicKey = 'init';
 
 var subscription = 'init';
 
+/**** UTILS ****/
+
+// urlB64ToUint8Array is a magic function that will encode the base64 public key
+// to Array buffer which is needed by the subscription option
+const urlB64ToUint8Array = base64String => 
+{
+	const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
+	const base64 = (base64String + padding).replace(/\-/g, '+').replace(/_/g, '/');
+	const rawData = atob(base64);
+	const outputArray = new Uint8Array(rawData.length);
+	for (let i = 0; i < rawData.length; ++i) {
+		outputArray[i] = rawData.charCodeAt(i)
+	}
+	return outputArray;
+};
+
+const saveSubscription = async subscription => 
+{
+	const SERVER_URL = "http://localhost:4000/save-subscription";
+	const response = await fetch(SERVER_URL, 
+	{
+		method: "POST",
+		headers: {
+		"Content-Type": "application/json"
+		},
+		body: JSON.stringify(subscription)
+	});
+	return response.json();
+};
+
+const getVAPIDPublicKey = async applicationServerPublicKey => 
+{
+	const SERVER_URL = "http://localhost:4000/get-keys";
+		
+	const response = await fetch(SERVER_URL, 
+	{
+		method: "GET",
+		headers: { "Content-Type": "application/json" }
+	});
+	
+	return response.json();
+
+};
+
+const sendWelcomeNotification = async =>
+{
+	const title = 'Bienvenue sur Raid Pogo Nantes';
+	const options = {
+	  body: 'Vous receverez des notifications à chaque fois que quelqu\'un poste un raid',
+	  icon: 'images/save_ok-512.png',
+	  badge: 'images/save_ok-512.png'
+	};
+	self.registration.showNotification(title, options);
+};
+
+/**** SERVICE WORKER ****/
+
 self.addEventListener('install', (evt) => 
 {
 	console.log('[ServiceWorker] Install');
@@ -49,6 +89,8 @@ self.addEventListener('install', (evt) =>
 	console.log('[ServiceWorker] Installed');
 });
 
+//async important. Sinon erreur :
+//Uncaught (in promise) TypeError: Failed to register a ServiceWorker: ServiceWorker script evaluation failed
 self.addEventListener('activate', async () => 
 {
 	console.log('[ServiceWorker] Activate');
@@ -79,12 +121,13 @@ self.addEventListener('activate', async () =>
 		console.log(response);
 		console.log('[ServiceWorker] Activated');
 		subscriptionSaved = true;
+		sendWelcomeNotification();
 	} 
 	catch (err) 
 	{
 		console.log('[ServiceWorker] Error during activation', err);
 	}
-})
+});
 
 self.addEventListener('fetch', (evt) => 
 {
@@ -129,47 +172,3 @@ self.addEventListener('notificationclick', (evt) =>
 	evt.notification.close();
 	console.log('[Service Worker] Notification closed.');
 });
-
-// urlB64ToUint8Array is a magic function that will encode the base64 public key
-// to Array buffer which is needed by the subscription option
-const urlB64ToUint8Array = base64String => 
-{
-	const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
-	const base64 = (base64String + padding).replace(/\-/g, '+').replace(/_/g, '/');
-	const rawData = atob(base64);
-	const outputArray = new Uint8Array(rawData.length);
-	for (let i = 0; i < rawData.length; ++i) {
-		outputArray[i] = rawData.charCodeAt(i)
-	}
-	return outputArray;
-};
-
-const saveSubscription = async subscription => 
-{
-	const SERVER_URL = "http://localhost:4000/save-subscription";
-	const response = await fetch(SERVER_URL, 
-	{
-		method: "POST",
-		headers: {
-		"Content-Type": "application/json"
-		},
-		body: JSON.stringify(subscription)
-	});
-	return response.json();
-};
-
-const getVAPIDPublicKey = async applicationServerPublicKey => 
-{
-	const SERVER_URL = "http://localhost:4000/get-keys";
-		
-	const response = await fetch(SERVER_URL, 
-	{
-		method: "GET",
-		headers: { "Content-Type": "application/json" }
-	});
-	
-	return response.json();
-
-};
-
-
