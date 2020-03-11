@@ -26,7 +26,8 @@ const raidApp =
 /********** Notification ********************/
 const SERVICE_WORKER = '/service-worker.js';
 
-const SERVEUR_URL = 'http://localhost:4000';
+//const SERVEUR_URL = 'http://localhost:3000';
+const SERVEUR_URL = 'https://expresstestapp.azurewebsites.net';
 
 const check = () => 
 {
