@@ -16,6 +16,9 @@ var applicationServerPublicKey = 'init';
 
 var subscription = 'init';
 
+//var SERVEUR_URL = 'http://localhost:3000'
+const SERVEUR_URL = 'https://expresstestapp.azurewebsites.net';
+
 /**** UTILS ****/
 
 // urlB64ToUint8Array is a magic function that will encode the base64 public key
@@ -34,8 +37,7 @@ const urlB64ToUint8Array = base64String =>
 
 const saveSubscription = async subscription => 
 {
-	const SERVER_URL = "http://localhost:4000/save-subscription";
-	const response = await fetch(SERVER_URL, 
+	const response = await fetch(SERVEUR_URL + '/save-subscription', 
 	{
 		method: "POST",
 		headers: {
@@ -47,10 +49,8 @@ const saveSubscription = async subscription =>
 };
 
 const getVAPIDPublicKey = async applicationServerPublicKey => 
-{
-	const SERVER_URL = "http://localhost:4000/get-keys";
-		
-	const response = await fetch(SERVER_URL, 
+{	
+	const response = await fetch(SERVEUR_URL + '/get-keys', 
 	{
 		method: "GET",
 		headers: { "Content-Type": "application/json" }
