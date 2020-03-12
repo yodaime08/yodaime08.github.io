@@ -344,8 +344,8 @@ function init()
 const main = async () => 
 {
 	check();
-	const swRegistration = await registerServiceWorker();
 	const permission = await requestNotificationPermission();
+	const swRegistration = await registerServiceWorker();	
 };
 
 main();
